@@ -37,7 +37,7 @@ d8P  Y8 d8' `8b 88'YbdP`88   `88'   88      88      88'
 Y8b  d8 88   88 88  88  88   .88.   88booo. 88booo. 88.     
  `Y88P' YP   YP YP  YP  YP Y888888P Y88888P Y88888P Y88888P 
                                                                                      
-            https://github.com/zhengjim/camille
+            
 -------------------------------------------------------------\n
 """
 
@@ -85,7 +85,7 @@ def frida_hook(app_name, use_module, wait_time=0, is_show=True, execl_file=None,
                 stacks = data['stacks']
                 if is_show:
                     print("------------------------------start---------------------------------")
-                    print("[*] {0}，APP行为：{1}、行为描述：{2}、传入参数：{3}".format(
+                    print("[*] {0}，APP行为：{1} | 行为描述：{2} | 传入参数：{3}".format(
                         alert_time, action, messages, arg.replace('\r\n', '，')))
                     print("[*] 调用堆栈：")
                     print(stacks)

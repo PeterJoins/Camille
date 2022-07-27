@@ -20,6 +20,8 @@ python3、frida 、一台已root手机(我测试机为Redmi 3s，刷机成魔趣
 
 2022-07-08: 默认不开启绕过TracerPid,添加attach hook，避免有些加固包不能hook问题。
 
+2022-07-27: 解决ubuntu不可导出文件问题，增加result打印行，新增剪切板、传感器字段
+
 下载：
 
 ```
@@ -100,8 +102,8 @@ python camille.py com.zhengjim.myapplication -t 3
 
 ```
 hook('com.zhengjim.myapplication.HookTest', [
-    {'methodName': 'getPassword', 'action': action, 'messages': '获取zhengjim密码'},
-    {'methodName': 'getUser', 'action': action, 'messages': '获取zhengjim用户名'},
+    {'methodName': 'getPassword', 'action': action, 'messages': '获取密码'},
+    {'methodName': 'getUser', 'action': action, 'messages': '获取用户名'},
 ]);
 ```
 

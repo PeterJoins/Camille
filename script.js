@@ -356,13 +356,56 @@ function getBluetooth() {
     ]);
 }
 
+//获取剪切板信息
+function getClipboard(){
+    var action = '获取剪切板信息';
+
+    hook('android.content.ClipboardManager', [
+        {'methodName': 'getPrimaryClip', 'action': action, 'messages': '[*] 读取剪切板'},
+        {'methodName': 'getText', 'action': action, 'messages': '[*] 读取剪切板'},
+        ]);
+}
+
+//获取传感器
+function getSensor(){
+    var action = '监听传感器'
+
+    hook('android.hardware.SystemSensorManager$SensorEventQueue',[
+        {'methodName': 'dispatchSensorEvent', 'action': action, 'messages': '[*] 获取传感器'}
+        ]);
+}
+
+//自启动
+function getSelfstart(){
+    var action = '应用自启动'
+
+    hook('android.app.AlarmManager',[
+        {'methodName': 'set', 'action': action, 'messages': '[*] 设置定时器'},
+        {'methodName': 'setExact', 'action': action, 'messages': '[*] 设置精准定时器'},
+        {'methodName': 'setInexactRepeating', 'action': action, 'messages': '[*] 设置重复定时器'},
+        {'methodName': 'setRepeating', 'action': action, 'messages': '[*] 设置精准重复定时器'},
+        ]);
+
+    // hook('android.content.Intent',[
+    //     {'methodName': 'getAction', 'action': action, 'messages': '[*] 开机自启动'},
+    //     ]);    
+    // var IntentManager = Java.use("android.content.Intent");
+    // IntentManager.getAction.overloads().implementation = function(){
+    //     var ret = this.getAction();
+    //     if(ret == "Intent.ACTION_BOOT_COMPLETED"){
+    //         console.log("[**]应用自启动--> ");
+    //     }
+    //     return ret;
+    // }
+}
+
 function customHook() {
     var action = '用户自定义hook';
 
     //自定义hook函数，可自行添加。格式如下：
     // hook('com.zhengjim.myapplication.HookTest', [
-    //     {'methodName': 'getPassword', 'action': action, 'messages': '获取zhengjim密码'},
-    //     {'methodName': 'getUser', 'action': action, 'messages': '获取zhengjim用户名'},
+    //     {'methodName': 'getPassword', 'action': action, 'messages': '获取密码'},
+    //     {'methodName': 'getUser', 'action': action, 'messages': '获取用户名'},
     // ]);
 }
 
@@ -376,6 +419,9 @@ function useModule(moduleList) {
         'network': [getNetwork],
         'camera': [getCamera],
         'bluetooth': [getBluetooth],
+        'clipboard': [getClipboard],
+        'sensor': [getSensor],
+        'selfstart': [getSelfstart],
         'custom': [customHook]
     };
     var _m = Object.keys(_module);
@@ -433,5 +479,5 @@ function main() {
 //在spawn模式下，hook应用自己的函数或含壳时，建议使用setTimeout并给出适当的延时(500~5000)
 
 // main();
-//setImmediate(main)
+// setImmediate(main)
 // setTimeout(main, 3000);
