@@ -98,6 +98,7 @@ def frida_hook(app_name, use_module, wait_time=0, is_show=True, execl_file=None,
                     worksheet.write(index_row, 3, arg, content_style)
                     worksheet.write(index_row, 4, stacks, content_style)
                     index_row += 1
+                    workbook.save(args.file)
             if data['type'] == "app_name":
                 get_app_name = data['data']
                 my_data = False if get_app_name == app_name else True

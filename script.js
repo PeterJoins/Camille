@@ -68,6 +68,7 @@ function hookMethod(targetClass, targetMethod, action, messages) {
             if (arg.length == 0) arg = '无参数';
             else arg = arg.slice(0, arg.length - 1);
             alertSend(action, messages, arg);
+            console.log("打印结果：--->" + temp);
             return temp;
         }
     }
