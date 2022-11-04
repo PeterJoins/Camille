@@ -13,7 +13,56 @@ var ByPassTracerPid = function () {
     }, 'pointer', ['pointer', 'int', 'pointer']));
 };
 
-// 获取调用链
+var ByPassfrida = function(){
+    var strStr = Module.findExportByName("libc.so", "strstr");
+    console.log("[*] strstr addr: " + strStr);
+    Interceptor.attach(strStr,{
+        onEnter: function(args){
+            console.log("[*] strstr hooked");
+            var arg0= ptr(args[0]).readCString();
+            var arg1= ptr(args[1]).readCString();
+            if(arg1.indexOf(":5DBA")>=0){
+                console.log("[*] strstr hooked"+arg0+","+arg1+")");
+                this.dba=true
+            
+            }
+            if(arg1.indexOf(":69A2")>=0){
+                console.log("[*] strstr hooked"+arg0+","+arg1+")");
+                this.a2=false
+            }
+            
+            if(arg1.indexOf("LIBFRIDA")>=0){
+                console.log("[*] strstr hooked"+arg0+","+arg1+")");
+                this.LIBFRIDA = true;
+            }
+            if(arg1.indexOf("frida")>=0){
+                console.log("[*] strstr hooked"+arg0+","+arg1+")");
+                this.frida = true;
+
+          }
+        },
+        onLeave: function(retval){
+            if(this.a2){
+                console.log("[*] a2 hooked"+retval);
+                retval.replace(0x0);
+            }
+            if(this.dba){
+                console.log("[*] d8a hooked"+retval);
+                retval.replace(0x0);
+            }
+            if(this.LIBFRIDA){
+                console.log("[*] the LIBFRIDA result: "+retval);
+                retval.replace(0x0)
+            }
+            if(this.frida){
+                console.log("[*] the frida result: "+retval);
+                retval.replace(0x0)
+            }
+        }
+    });
+}
+
+//获取调用链
 function getStackTrace() {
     var Exception = Java.use('java.lang.Exception');
     var ins = Exception.$new('Exception');
@@ -33,7 +82,8 @@ function getStackTrace() {
 //告警发送
 function alertSend(action, messages, arg) {
     var myDate = new Date();
-    var _time = myDate.getFullYear() + '-' + myDate.getMonth() + '-' + myDate.getDate() + ' ' + myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds();
+    var myMonth = myDate.getMonth() + 1;
+    var _time = myDate.getFullYear() + '-' + myMonth + '-' + myDate.getDate() + ' ' + myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds();
     send({
         'type': 'notice',
         'time': _time,
@@ -51,25 +101,43 @@ function hookMethod(targetClass, targetMethod, action, messages) {
     } catch (e) {
         return false;
     }
-    try {
-        var overloadCount = _Class[targetMethod].overloads.length;
-    } catch (e) {
-        console.log(e)
-        console.log('[*] hook(' + targetMethod + ')方法失败,请检查该方法是否存在！！！');
-        return false;
-    }
-    for (var i = 0; i < overloadCount; i++) {
-        _Class[targetMethod].overloads[i].implementation = function () {
-            var temp = this[targetMethod].apply(this, arguments);
-            var arg = '';
-            for (var j = 0; j < arguments.length; j++) {
-                arg += '参数' + j + '：' + JSON.stringify(arguments[j]) + '\r\n';
+
+    if (targetMethod == '$init') {
+        var overloadCount = _Class.$init.overloads.length;
+        for (var i = 0; i < overloadCount; i++) {
+            _Class.$init.overloads[i].implementation = function () {
+                var temp = this.$init.apply(this, arguments);
+                var arg = '';
+                for (var j = 0; j < arguments.length; j++) {
+                    arg += '参数' + j + '：' + JSON.stringify(arguments[j]) + '\r\n';
+                }
+                if (arg.length == 0) arg = '无参数';
+                else arg = arg.slice(0, arg.length - 1);
+                alertSend(action, messages, arg);
+                return temp;
             }
-            if (arg.length == 0) arg = '无参数';
-            else arg = arg.slice(0, arg.length - 1);
-            alertSend(action, messages, arg);
-            console.log("打印结果：--->" + temp);
-            return temp;
+        }
+    } else {
+        try {
+            var overloadCount = _Class[targetMethod].overloads.length;
+        } catch (e) {
+            console.log(e)
+            console.log('[*] hook(' + targetMethod + ')方法失败,请检查该方法是否存在！！！');
+            return false;
+        }
+        for (var i = 0; i < overloadCount; i++) {
+            _Class[targetMethod].overloads[i].implementation = function () {
+                var temp = this[targetMethod].apply(this, arguments);
+                var arg = '';
+                for (var j = 0; j < arguments.length; j++) {
+                    arg += '参数' + j + '：' + JSON.stringify(arguments[j]) + '\r\n';
+                }
+                if (arg.length == 0) arg = '无参数';
+                else arg = arg.slice(0, arg.length - 1);
+                alertSend(action, messages, arg);
+                console.log("打印结果：--->" + temp);
+                return temp;
+            }
         }
     }
     return true;
@@ -123,12 +191,13 @@ function getPhoneState() {
         {'methodName': 'getLine1Number', 'action': action, 'messages': '获取电话号码标识符'},
         {'methodName': 'getSimSerialNumber', 'action': action, 'messages': '获取IMSI/iccid'},
         {'methodName': 'getSubscriberId', 'action': action, 'messages': '获取IMSI'},
+        {'methodName': 'getSubscriberInfo', 'action': action, 'messages': '获取呼叫状态'},
         {'methodName': 'getSimOperator', 'action': action, 'messages': '获取MCC/MNC'},
         {'methodName': 'getNetworkOperator', 'action': action, 'messages': '获取MCC/MNC'},
         {'methodName': 'getSimCountryIso', 'action': action, 'messages': '获取SIM卡国家代码'},
 
-        {'methodName': 'getCellLocation', 'action': action, 'messages': '获取电话当前位置信息'},
-        {'methodName': 'getAllCellInfo', 'action': action, 'messages': '获取电话当前位置信息'},
+        {'methodName': 'getCellLocation', 'action': action, 'messages': '获取基站位置信息'},
+        {'methodName': 'getAllCellInfo', 'action': action, 'messages': '获取基站位置信息'},
         {'methodName': 'requestCellInfoUpdate', 'action': action, 'messages': '获取基站信息'},
         {'methodName': 'getServiceState', 'action': action, 'messages': '获取sim卡是否可用'},
     ]);
@@ -158,10 +227,6 @@ function getSystemData() {
         {'methodName': 'getSerial', 'action': action, 'messages': '获取设备序列号'},
     ]);
 
-    hook('android.os.Build', [
-        {'methodName': 'getSerial', 'action': action, 'messages': '获取设备序列号'},
-    ]);
-
     hook('android.app.admin.DevicePolicyManager', [
         {'methodName': 'getWifiMacAddress', 'action': action, 'messages': '获取mac地址'},
     ]);
@@ -169,6 +234,11 @@ function getSystemData() {
     hook('android.content.ClipboardManager', [
         {'methodName': 'getPrimaryClip', 'action': action, 'messages': '读取剪切板信息'},
     ]);
+
+    // hook('android.os.Environment', [
+    //     {'methodName': 'getExternalStorageDirectory', 'action': action, 'messages': '读取手机外置存储信息'},
+
+    // ]);
 
     //获取content敏感信息
     try {
@@ -225,26 +295,38 @@ function getSystemData() {
 
 //获取其他app信息
 function getPackageManager() {
-    var action = '获取其他app信息';
+    var action = '获取应用列表';
 
     hook('android.content.pm.PackageManager', [
         {'methodName': 'getInstalledPackages', 'action': action, 'messages': 'APP获取了其他app信息'},
-        {'methodName': 'getInstalledApplications', 'action': action, 'messages': 'APP获取了其他app信息'}
+        {'methodName': 'getInstalledApplications', 'action': action, 'messages': 'APP获取了其他app信息'},
     ]);
 
     hook('android.app.ApplicationPackageManager', [
         {'methodName': 'getInstalledPackages', 'action': action, 'messages': 'APP获取了其他app信息'},
         {'methodName': 'getInstalledApplications', 'action': action, 'messages': 'APP获取了其他app信息'},
+        // {'methodName': 'queryIntentActivitiesAsUser', 'action': action, 'messages': 'APP获取了其他app信息'},
+        // {'methodName': 'getInstallerPackageName', 'action': action, 'messages': 'APP获取了其他app信息'},
+        // {'methodName': 'getPackageInfo', 'action': action, 'messages': 'APP获取了其他app信息'},
+        // {'methodName': 'getPackageInfoAsUser', 'action': action, 'messages': 'APP获取了其他app信息'},
+
         {'methodName': 'queryIntentActivities', 'action': action, 'messages': 'APP获取了其他app信息'},
+        {'methodName': 'queryIntentServices', 'action': action, 'messages': 'APP获取了其他app信息'},
     ]);
 
     hook('android.app.ActivityManager', [
-        {'methodName': 'getRunningAppProcesses', 'action': action, 'messages': '获取了正在运行的App'}
+        {'methodName': 'getRunningAppProcesses', 'action': action, 'messages': '获取运行中App进程信息'},
+        {'methodName': 'getRunningServiceControlPanel', 'action': action, 'messages': '获取了正在运行的服务面板'},
+        {'methodName': 'getRunningTasks', 'action': action, 'messages': '获取正在运行的任务列表'},
+        {'methodName': 'getRecentTasks', 'action': action, 'messages': '获取最近启动的任务列表'},
+        {'methodName': 'getRunningServices', 'action': action, 'messages': '获取运行中的服务列表'},
     ]);
+
+
+    var _ApplicationPackageManager = Java.use('android.app.ApplicationPackageManager');
 
     //getApplicationInfo
     try {
-        var _ApplicationPackageManager = Java.use('android.app.ApplicationPackageManager');
         _ApplicationPackageManager.getApplicationInfo.implementation = function (p1, p2) {
             var temp = this.getApplicationInfo(p1, p2);
             var string_to_recv;
@@ -258,18 +340,78 @@ function getPackageManager() {
             }
             return temp;
         };
+
     } catch (e) {
+        console.log(e)
+    }
+    //getPackageInfoAsUser
+    try{
+        _ApplicationPackageManager.getPackageInfoAsUser.implementation = function (p1, p2, p3) {
+            var temp = this.getPackageInfoAsUser(p1, p2, p3);
+            var string_to_recv;
+            // 判断是否为自身应用，是的话不记录
+            send({'type': 'app_name', 'data': p1});
+            recv(function (received_json_object) {
+                string_to_recv = received_json_object.my_data;
+            }).wait();
+            if (string_to_recv) {
+                alertSend(action, 'getPackageInfoAsUser获取的数据为：' + temp, p1);
+            }
+            return temp;
+        }
+    }catch(e){
+        console.log(e)
+    }
+
+    //getInstallerPackageName
+    try{
+        _ApplicationPackageManager.getInstallerPackageName.implementation = function (p1) {
+            var temp = this.getInstallerPackageName(p1);
+            var string_to_recv;
+            // 判断是否为自身应用，是的话不记录
+            send({'type': 'app_name', 'data': p1});
+            recv(function (received_json_object) {
+                string_to_recv = received_json_object.my_data;
+            }).wait();
+            if (string_to_recv) {
+                alertSend(action, 'getInstallerPackageName获取的数据为：' + temp, p1);
+            }
+            return temp;
+        }
+    }catch(e){
         console.log(e)
     }
 }
 
+
 // 获取位置信息
-function getGSP() {
+function getLocation() {
     var action = '获取位置信息';
 
     hook('android.location.LocationManager', [
         {'methodName': 'requestLocationUpdates', 'action': action, 'messages': action},
         {'methodName': 'getLastKnownLocation', 'action': action, 'messages': action},
+        {'methodName': 'getBestProvider', 'action': action, 'messages': action},
+        {'methodName': 'getGnssHardwareModelName', 'action': action, 'messages': action},
+        {'methodName': 'getGnssYearOfHardware', 'action': action, 'messages': action},
+        {'methodName': 'getProvider', 'action': action, 'messages': action},
+        {'methodName': 'requestSingleUpdate', 'action': action, 'messages': action},
+    ]);
+
+    hook('android.location.Location', [
+        {'methodName': 'getAccuracy', 'action': action, 'messages': action},
+        {'methodName': 'getAltitude', 'action': action, 'messages': action},
+        {'methodName': 'getBearing', 'action': action, 'messages': action},
+        {'methodName': 'getBearingAccuracyDegrees', 'action': action, 'messages': action},
+        {'methodName': 'getElapsedRealtimeNanos', 'action': action, 'messages': action},
+        {'methodName': 'getExtras', 'action': action, 'messages': action},
+        {'methodName': 'getLatitude', 'action': action, 'messages': action},
+        {'methodName': 'getLongitude', 'action': action, 'messages': action},
+        {'methodName': 'getProvider', 'action': action, 'messages': action},
+        {'methodName': 'getSpeed', 'action': action, 'messages': action},
+        {'methodName': 'getSpeedAccuracyMetersPerSecond', 'action': action, 'messages': action},
+        {'methodName': 'getTime', 'action': action, 'messages': action},
+        {'methodName': 'getVerticalAccuracyMeters', 'action': action, 'messages': action},
     ]);
 }
 
@@ -299,6 +441,7 @@ function getNetwork() {
         {'methodName': 'getMacAddress', 'action': action, 'messages': '获取Mac地址'},
         {'methodName': 'getSSID', 'action': action, 'messages': '获取wifi SSID'},
         {'methodName': 'getBSSID', 'action': action, 'messages': '获取wifi BSSID'},
+        {'methodName': 'toString', 'action': action, 'messages': '获取wifi 信息'},
     ]);
 
     hook('android.net.wifi.WifiManager', [
@@ -316,11 +459,11 @@ function getNetwork() {
     ]);
 
     hook('android.net.NetworkInfo', [
-        {'methodName': 'getType', 'action': action, 'messages': '获取网络类型'},
-        {'methodName': 'getTypeName', 'action': action, 'messages': '获取网络类型名称'},
-        {'methodName': 'getExtraInfo', 'action': action, 'messages': '获取网络名称'},
-        {'methodName': 'isAvailable', 'action': action, 'messages': '获取网络是否可用'},
-        {'methodName': 'isConnected', 'action': action, 'messages': '获取网络是否连接'}
+        // {'methodName': 'getType', 'action': action, 'messages': '获取网络类型'},
+        // {'methodName': 'getTypeName', 'action': action, 'messages': '获取网络类型名称'},
+        // {'methodName': 'getExtraInfo', 'action': action, 'messages': '获取网络名称'},
+        // {'methodName': 'isAvailable', 'action': action, 'messages': '获取网络是否可用'},
+        // {'methodName': 'isConnected', 'action': action, 'messages': '获取网络是否连接'}
     ]);
 
     // ip地址
@@ -349,7 +492,7 @@ function getBluetooth() {
 
     hook('android.bluetooth.BluetoothDevice', [
         {'methodName': 'getName', 'action': action, 'messages': '获取蓝牙设备名称'},
-        {'methodName': 'getAddress', 'action': action, 'messages': '获取蓝牙设备mac'},
+        {'methodName': 'getAddress', 'action': action, 'messages': '获取蓝牙设备mac'},   //部分应用退出
     ]);
 
     hook('android.bluetooth.BluetoothAdapter', [
@@ -363,6 +506,7 @@ function getClipboard(){
 
     hook('android.content.ClipboardManager', [
         {'methodName': 'getPrimaryClip', 'action': action, 'messages': '[*] 读取剪切板'},
+        // {'methodName': 'addPrimaryClipChangedListener', 'action': action, 'messages': '[*] 读取剪切板'},   //该项非隐私
         {'methodName': 'getText', 'action': action, 'messages': '[*] 读取剪切板'},
         ]);
 }
@@ -374,37 +518,58 @@ function getSensor(){
     hook('android.hardware.SystemSensorManager$SensorEventQueue',[
         {'methodName': 'dispatchSensorEvent', 'action': action, 'messages': '[*] 获取传感器'}
         ]);
+
+    // hook('android.hardware.SensorManager',[
+    //     // {'methodName': 'getSensorList', 'action': action, 'messages': '[*] 获取传感器列表'}
+    //     ]);
+}
+
+//读写文件
+function getFileMessage() {
+    var action = '文件操作';
+
+    hook('java.io.RandomAccessFile', [
+        {'methodName': '$init', 'action': action, 'messages': 'RandomAccessFile写文件'}
+    ]);
+    hook('java.io.File', [
+        {'methodName': 'mkdirs', 'action': action, 'messages': '尝试写入sdcard创建'},  //小米市场审核可能不通过
+        {'methodName': 'mkdir', 'action': action, 'messages': '尝试写入sdcard创建'}     //小米市场审核可能不通过
+    ]);
+}
+
+//获取麦克风信息
+function getMedia() {
+    var action = '获取麦克风'
+    hook('android.media.MediaRecorder', [
+        {'methodName': 'start', 'action': action, 'messages': '获取麦克风'},
+    ]);
+    hook('android.media.AudioRecord', [
+        {'methodName': 'startRecording', 'action': action, 'messages': '获取麦克风'},
+    ]);
 }
 
 //自启动
 function getSelfstart(){
     var action = '应用自启动'
 
-    hook('android.app.AlarmManager',[
-        {'methodName': 'set', 'action': action, 'messages': '[*] 设置定时器'},
-        {'methodName': 'setExact', 'action': action, 'messages': '[*] 设置精准定时器'},
-        {'methodName': 'setInexactRepeating', 'action': action, 'messages': '[*] 设置重复定时器'},
-        {'methodName': 'setRepeating', 'action': action, 'messages': '[*] 设置精准重复定时器'},
-        ]);
+    // hook('android.app.AlarmManager',[
+    //     {'methodName': 'set', 'action': action, 'messages': '[*] 设置定时器'},
+    //     {'methodName': 'setExact', 'action': action, 'messages': '[*] 设置精准定时器'},
+    //     {'methodName': 'setInexactRepeating', 'action': action, 'messages': '[*] 设置重复定时器'},
+    //     {'methodName': 'setRepeating', 'action': action, 'messages': '[*] 设置精准重复定时器'},
+    //     ]);
 
-    // hook('android.content.Intent',[
-    //     {'methodName': 'getAction', 'action': action, 'messages': '[*] 开机自启动'},
-    //     ]);    
-    // var IntentManager = Java.use("android.content.Intent");
-    // IntentManager.getAction.overloads().implementation = function(){
-    //     var ret = this.getAction();
-    //     if(ret == "Intent.ACTION_BOOT_COMPLETED"){
-    //         console.log("[**]应用自启动--> ");
-    //     }
-    //     return ret;
-    // }
+    // hook('com.android.server.am.BroadcastQueue',[
+    //     {'methodName': 'processNextBroadcast', 'action': action, 'messages': '[*] 应用自启动'}
+    //     ]);
 }
+
 
 function customHook() {
     var action = '用户自定义hook';
 
     //自定义hook函数，可自行添加。格式如下：
-    // hook('com.zhengjim.myapplication.HookTest', [
+    // hook('com.xxx.myapplication.HookTest', [
     //     {'methodName': 'getPassword', 'action': action, 'messages': '获取密码'},
     //     {'methodName': 'getUser', 'action': action, 'messages': '获取用户名'},
     // ]);
@@ -416,12 +581,14 @@ function useModule(moduleList) {
         'phone': [getPhoneState],
         'system': [getSystemData],
         'app': [getPackageManager],
-        'location': [getGSP],
+        'location': [getLocation],
         'network': [getNetwork],
         'camera': [getCamera],
         'bluetooth': [getBluetooth],
         'clipboard': [getClipboard],
         'sensor': [getSensor],
+        'file': [getFileMessage],
+        'media': [getMedia],
         'selfstart': [getSelfstart],
         'custom': [customHook]
     };
@@ -475,6 +642,7 @@ function main() {
 }
 // 绕过TracerPid检测 默认关闭，有必要时再自行打开
 // setImmediate(ByPassTracerPid);
+// setImmediate(ByPassfrida);
 
 //在spawn模式下，hook系统API时如javax.crypto.Cipher建议使用setImmediate立即执行，不需要延时
 //在spawn模式下，hook应用自己的函数或含壳时，建议使用setTimeout并给出适当的延时(500~5000)

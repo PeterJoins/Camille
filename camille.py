@@ -1,3 +1,6 @@
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import frida
 import sys
 import time
@@ -37,7 +40,7 @@ d8P  Y8 d8' `8b 88'YbdP`88   `88'   88      88      88'
 Y8b  d8 88   88 88  88  88   .88.   88booo. 88booo. 88.     
  `Y88P' YP   YP YP  YP  YP Y888888P Y88888P Y88888P Y88888P 
                                                                                      
-            
+            https://github.com/PeterJoins/Camille
 -------------------------------------------------------------\n
 """
 
@@ -128,7 +131,7 @@ def frida_hook(app_name, use_module, wait_time=0, is_show=True, execl_file=None,
 
     if execl_file:
         workbook = xlwt.Workbook(encoding='utf-8')
-        worksheet = workbook.add_sheet('App_privacy_compliance_testing')
+        worksheet = workbook.add_sheet('隐私合规检测')
         # 标题字体
         title_style = xlwt.XFStyle()
         title_font = xlwt.Font()
@@ -146,12 +149,19 @@ def frida_hook(app_name, use_module, wait_time=0, is_show=True, execl_file=None,
         worksheet.col(0).width = 20 * 300
         worksheet.row(0).height_mismatch = True
         worksheet.row(0).height = 20 * 25
+
+        # worksheet.write(0,1,'同意隐私', title_style)
+        # worksheet.col(1).width = 20 * 300
+
         worksheet.write(0, 1, '操作行为', title_style)
         worksheet.col(1).width = 20 * 300
+
         worksheet.write(0, 2, '行为描述', title_style)
         worksheet.col(2).width = 20 * 400
+
         worksheet.write(0, 3, '传入参数', title_style)
         worksheet.col(3).width = 20 * 400
+
         worksheet.write(0, 4, '调用堆栈', title_style)
         worksheet.col(4).width = 20 * 1200
 
@@ -222,6 +232,7 @@ if __name__ == '__main__':
     # 全局变量
     isHook = False
     index_row = 1
+    isPrivacy =False
 
     use_module = {"type": "all", "data": []}
     if args.use:
@@ -230,4 +241,6 @@ if __name__ == '__main__':
         use_module = {"type": "nouse", "data": args.nouse}
 
     process = int(args.package) if args.package.isdigit() else args.package
+    
     frida_hook(process, use_module, args.time, args.noshow, args.file, args.isattach)
+

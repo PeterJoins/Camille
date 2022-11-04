@@ -1,0 +1,1336 @@
+{
+  "一下": [
+    "com.yixia."
+  ],
+  "友盟游戏统计分析": [
+    "com.umeng.analytics.game"
+  ],
+  "XQRCode": [
+    "com.xuexiang.xqrcode."
+  ],
+  "Double Labs": [
+    "com.doublelabs."
+  ],
+  "谷歌统计": [
+    "com.google.android.gms.analytics",
+    "com.google.analytics"
+  ],
+  "EaseUi": [
+    "com.easemob.easeui.ui"
+  ],
+  "微信支付": [
+    "com.tencent.mm.sdk",
+    ".BCWechatPaymentActivity"
+  ],
+  "pulltorefresh": [
+    "com.handmark.pulltorefresh"
+  ],
+  "美图sdk": [
+    "com.meitu.mp.sdk"
+  ],
+  "Cobub Razor": [
+    "com.wbtech.ums"
+  ],
+  "个推一键登录": [
+    "com.getui.gtc",
+    "com.geetest.onelogin"
+  ],
+  "华为推送": [
+    "com.huawei.agconnect.core",
+    "com.huawei.android.pushselfshow",
+    "com.huawei.push.",
+    "com.huawei.updatesdk",
+    "com.huawei.android.pushagent",
+    "com.huawei.intent.action.PUSH_STATE",
+    "com.huawei.intent.action.PUSH"
+  ],
+  "okhttp3": [
+    "okhttp3"
+  ],
+  "imagezoom": [
+    "it.sephiroth.android.library.imagezoom"
+  ],
+  "SDL": [
+    "org.libsdl."
+  ],
+  "mikephil_charting": [
+    "com.github.mikephil.charting"
+  ],
+  "Type-safe REST client": [
+    "retrofit2"
+  ],
+  "腾讯MQTT": [
+    "com.tencent.bigdata",
+    "com.tencent.bigdata.mqttchannel"
+  ],
+  "易信": [
+    "yxapi.AppRegister",
+    "im.yixin.sdk",
+    "yxapi.YXEntryActivity"
+  ],
+  "旷视人脸认证": [
+    "com.megvii.meglive_sdk"
+  ],
+  "拉卡拉支付": [
+    "com.lkl.pay."
+  ],
+  "auto-scroll circular parallax ListViews.": [
+    "it.sephiroth.android.library"
+  ],
+  "腾讯 WebNet": [
+    "com.tencent.webnet"
+  ],
+  "支付宝开放平台": [
+    "com.alibaba.alipay",
+    "com.alipay.android.app.",
+    "com.alipay.android.app.sdk",
+    "com.alipay.android.mini"
+  ],
+  "securepreferences": [
+    "com.securepreferences"
+  ],
+  "Fabric": [
+    "io.fabric.ApiKey"
+  ],
+  "EBookDroid": [
+    "org.ebookdroid."
+  ],
+  "SQLCipher": [
+    "net.sqlcipher"
+  ],
+  "UC插件": [
+    "com.uc.addon.sdk.remote"
+  ],
+  "Material design ProgressBar": [
+    "me.zhanghai.android.materialprogressbar"
+  ],
+  "百度 UfoSDK": [
+    "com.baidu.ufosdk"
+  ],
+  "Evernote推送": [
+    "com.evernote.android.job."
+  ],
+  "喜马拉雅FM sdk": [
+    "com.ximalaya.ting.android.opensdk"
+  ],
+  "腾讯微博sdk": [
+    "com.tencent.weibo.sdk"
+  ],
+  "环信坐席端SDK": [
+    "com.easemob.chat.",
+    "com.easemob.videocall",
+    "com.easemob.kefu.",
+    "com.hyphenate.chat."
+  ],
+  "乐播投屏": [
+    "com.hpplay.sdk"
+  ],
+  "WPS mail": [
+    "com.kingsoft.mail.",
+    "com.kingsoft.email"
+  ],
+  "谷歌 VR": [
+    "com.google.vr."
+  ],
+  "腾讯信鸽推送收费版": [
+    "com.tencent.android.tpush.service.XGVipPushService",
+    "com.tencent.android.xg.vip."
+  ],
+  "Java MQTT Client": [
+    "org.eclipse.paho.client.mqttv3"
+  ],
+  "应用宝": [
+    "com.tencent.open"
+  ],
+  "ShareSDK": [
+    "cn.sharesdk"
+  ],
+  "腾讯游戏": [
+    "com.tencent.gps.cloudgame",
+    "com.tencent.game",
+    "com.tencent.gamecenter"
+  ],
+  "百度Pyramid": [
+    "com.baidu.pyramid"
+  ],
+  "网易支付": [
+    "com.netease.epay."
+  ],
+  "腾讯 wifi": [
+    "com.tencent.wifisdk"
+  ],
+  "GPUImage": [
+    "jp.co.cyberagent.android.gpuimage"
+  ],
+  "支付宝 mobilecommon": [
+    "com.alipay.android.phone.mobilecommon"
+  ],
+  "京东支付": [
+    "com.jdpay.paymentcode",
+    "com.jd.lib.jdpaygeneral",
+    "com.jdpaysdk.payment",
+    "com.jd.lib.jdpaysdk",
+    "com.jdpaysdk.author",
+    "com.wangyin.payment.jdpaysdk"
+  ],
+  "SwipeRefreshLayout": [
+    "com.baoyz.widget"
+  ],
+  "中国移动 AOE": [
+    "com.cmcc.aoe"
+  ],
+  "谷歌地图sdk": [
+    "com.google.android.gms.maps",
+    "com.google.android.geo.API_KEY",
+    "com.google.android.maps"
+  ],
+  "腾讯QQ邮箱": [
+    "com.tencent.qqmail."
+  ],
+  "淘宝 tlog": [
+    "com.taobao.android.tlog."
+  ],
+  "腾讯TME live": [
+    "com.tme.component",
+    "com.tme.mlive."
+  ],
+  "Wps": [
+    "cn.wps.moffice.",
+    "com.feinnoui.library.wps."
+  ],
+  "搜狗语音云": [
+    "com.sogou.speech."
+  ],
+  "谷歌 sample": [
+    "com.google.sample."
+  ],
+  "displaying animated GIF": [
+    "pl.droidsonroids.gif"
+  ],
+  "支付宝支付": [
+    "com.alipay.sdk.auth",
+    "com.alipay.android.app.pay",
+    "com.alipay.sdk",
+    "com.alipay.sdk.app"
+  ],
+  "agoo": [
+    "org.android.agoo.accs.",
+    "org.android.agoo",
+    "com.android.agoo."
+  ],
+  "广升(Adups):FOTA升级": [
+    "adups.smartdevice.fota"
+  ],
+  "listviewanimations": [
+    "com.nhaarman.listviewanimations"
+  ],
+  "Horizontal ListView": [
+    "com.devsmart"
+  ],
+  "腾讯阅读": [
+    "cooperation.qqreader"
+  ],
+  "uls": [
+    "com.uxin.ulslibrary"
+  ],
+  "LeakCanary": [
+    "com.squareup.leakcanary"
+  ],
+  "Cortana SDK": [
+    "com.microsoft.cortana.plugin",
+    "com.microsoft.cortana.clientsdk",
+    "com.microsoft.cortana.services",
+    "com.microsoft.cortana.sdk",
+    "com.microsoft.cortana."
+  ],
+  "腾讯QQ钱包": [
+    "cooperation.qwallet.",
+    "com.tencent.mobileqq.activity.qwallet.",
+    "com.tencent.midas.qq.APReidasQQWalletActivity",
+    "com.tencent.midas."
+  ],
+  "xmcontainer": [
+    "com.linfaxin.xmcontainer"
+  ],
+  "创蓝闪验": [
+    "com.chuanglan.shanyan_sdk"
+  ],
+  "人脸识别": [
+    "com.swwx.facesdk"
+  ],
+  "Disk-based LRU cache": [
+    "com.jakewharton.disklrucache"
+  ],
+  "百度语音": [
+    "com.baidu.tts."
+  ],
+  "SwiFTP": [
+    "org.swiftp"
+  ],
+  "luck_picture": [
+    "com.luck.picture"
+  ],
+  "乐视手游": [
+    "com.le.legamesdk"
+  ],
+  "PlaylistCore": [
+    "com.devbrackets.android.playlistcore"
+  ],
+  "新浪微博开放平台": [
+    "com.sina.push",
+    "com.sina.weibo.sdk"
+  ],
+  "搜狗passport": [
+    "com.sogou.passportsdk"
+  ],
+  "小米 passport": [
+    "com.xiaomi.passport"
+  ],
+  "FirebaseUI": [
+    "com.firebase.ui."
+  ],
+  "Bugsnag": [
+    "com.bugsnag.android."
+  ],
+  "Circle button widget": [
+    "at.markushi.ui"
+  ],
+  "百度地图": [
+    "com.baidu.mapapi",
+    "com.baidu.cesium",
+    "com.baidu.cesium.ver"
+  ],
+  "EasyPermissions": [
+    "pub.devrel.easypermissions"
+  ],
+  "讯飞开放平台": [
+    "com.iflytek"
+  ],
+  "极光推送": [
+    "cn.jpush.yyb.",
+    "cn.jpush.client",
+    "cn.jpush.reactnativejpush.",
+    "cn.jpush.android.ui.Push",
+    "cn.jpush.android",
+    "cn.jpush.android.api"
+  ],
+  "百度云语音": [
+    "com.baidu.voicerecognition.android"
+  ],
+  "百度钱包": [
+    "com.baidu.wallet",
+    "com.baidu.poly",
+    "com.baidu.paysdk",
+    "com.baidu.android.pay",
+    "com.baidu.wallet.paysdk"
+  ],
+  "ShortcutBadger": [
+    "me.leolin.shortcutbadger"
+  ],
+  "百度移动统计SDK": [
+    "com.baidu.mobstat"
+  ],
+  "HockeyApp": [
+    "net.hockeyapp.android"
+  ],
+  "QQ看点": [
+    "cooperation.qqhotspot."
+  ],
+  "ironSource": [
+    "com.ironsource.sdk."
+  ],
+  "facebook_crypto": [
+    "com.facebook.crypto"
+  ],
+  "芝麻认证": [
+    "com.megvii.zhimasdk"
+  ],
+  "腾讯Tinker": [
+    "com.tencent.tinker"
+  ],
+  "小米推送": [
+    "com.xiaomi.push",
+    ".MiPUSH",
+    "com.xiaomi.mipush"
+  ],
+  "Lightspeed Push": [
+    "com.arrownock.push"
+  ],
+  "友盟反馈": [
+    "com.feedback.ui",
+    "com.umeng.fb",
+    "com.mobclick.android.UmengFeedback"
+  ],
+  "腾讯 WNS": [
+    "com.tencent.wns."
+  ],
+  "仿iOS的PickerView控件": [
+    "com.bigkoo.pickerview"
+  ],
+  "eventbus": [
+    "org.simple.eventbus"
+  ],
+  "美团hydra": [
+    "com.meituan.hydra"
+  ],
+  "Line 分享": [
+    "jp.line.sdk"
+  ],
+  "蒲公英内测": [
+    "com.pgyersdk"
+  ],
+  "Rajawali": [
+    "org.rajawali3d"
+  ],
+  "image management": [
+    "com.facebook.cache.common",
+    "com.facebook.imagepipeline"
+  ],
+  "Qiniu Resource (Cloud)": [
+    "com.qiniu.android"
+  ],
+  "CloudRail": [
+    "com.cloudrail.si"
+  ],
+  "百度helios": [
+    "com.baidu.helios"
+  ],
+  "GiraffePlayer2": [
+    "tcking.github.com.giraffeplayer2."
+  ],
+  "Protocol Buffers": [
+    "com.google.protobuf"
+  ],
+  "美洽移动应用 SDK": [
+    "com.meiqia.meiqiasdk.",
+    "com.meiqia.core"
+  ],
+  "Pinyin4j": [
+    "net.sourceforge.pinyin4j"
+  ],
+  "Curzibn_Luban": [
+    "top.zibin.luban"
+  ],
+  "腾讯云Iot": [
+    "com.tencent.iot"
+  ],
+  "滴滴出行sdk": [
+    "com.sdu.didi.openapi"
+  ],
+  "javapoet": [
+    "com.squareup.javapoet"
+  ],
+  "招商一网通支付": [
+    "cmbapi.CMBApiEntryActivity",
+    "com.cmbchina.pb.",
+    ".CMBApiEntryActivity"
+  ],
+  "腾讯云通信sdk": [
+    "com.tencent.qalsdk",
+    "com.tencent.qalsdk.service"
+  ],
+  "微猫sdk": [
+    "cn.wemart.sdk"
+  ],
+  "greenEventBus": [
+    "de.greenrobot.event"
+  ],
+  "腾讯信鸽推送": [
+    "com.tencent.rdm.uuid",
+    "com.tencent.android.tpush"
+  ],
+  "腾讯 moai": [
+    "com.tencent.moai.",
+    "moai.patch.",
+    "moai.ocr.",
+    "moai.daemon."
+  ],
+  "Microsoft Notes": [
+    "com.microsoft.notes"
+  ],
+  "时光相册": [
+    "everphoto.component.",
+    "everphoto."
+  ],
+  "谷歌 文字转语音": [
+    "com.google.android.tts.",
+    "android.speech.tts"
+  ],
+  "联通登录": [
+    "com.sdk.mobile.manager.login.cucc"
+  ],
+  "daimajia_numberprogressbar": [
+    "com.daimajia.numberprogressbar"
+  ],
+  "腾讯地图Android SDK": [
+    "com.tencent.map",
+    "com.tencent.tencentmap"
+  ],
+  "recyclerviewheader2": [
+    "com.bartoszlipinski.recyclerviewheader"
+  ],
+  "SunPlayer": [
+    "com.player.sunplayer."
+  ],
+  "Facebook React": [
+    "com.facebook",
+    "com.facebook.react"
+  ],
+  "viewpagerindicator": [
+    "com.viewpagerindicator"
+  ],
+  "百度昊天SDK": [
+    "com.baidu.haotian.",
+    "com.baidu.sofire"
+  ],
+  "淘宝 Atlas": [
+    "android.taobao.atlas."
+  ],
+  "CustomActivityOnCrash": [
+    "cat.ereza.customactivityoncrash."
+  ],
+  "支付宝 Nebula": [
+    "com.alibaba.sdk.android.webview.",
+    "com.alipay.android.nebulaapp."
+  ],
+  "Floating Action Button": [
+    "com.getbase.floatingactionbutton"
+  ],
+  "systembartint": [
+    "com.readystatesoftware.systembartint"
+  ],
+  "环信 TC-IM": [
+    "com.hyphenate.liveroom"
+  ],
+  "Braintree支付": [
+    "com.braintreepayments.api."
+  ],
+  "jobdispatcher": [
+    "com.firebase.jobdispatcher"
+  ],
+  "谷歌 FireBase": [
+    "com.google.firebase."
+  ],
+  "易观方舟": [
+    "com.eguan.drivermonitor",
+    "com.eguan.monitor"
+  ],
+  "建行龙支付": [
+    "com.ccb.pay.loongpay",
+    "com.ccb.loongwealth"
+  ],
+  "华为游戏中心sdk": [
+    "com.huawei.hwid20"
+  ],
+  "百度swan": [
+    "com.baidu.swan"
+  ],
+  "react-native异常处理库": [
+    "com.masteratul.exceptionhandler"
+  ],
+  "Payment": [
+    "com.uc.paymentsdk."
+  ],
+  "E4a": [
+    "com.e4a.runtime"
+  ],
+  "greenDAO": [
+    "de.greenrobot.dao"
+  ],
+  "TransitionPlayer": [
+    "com.linfaxin.transitionplayer."
+  ],
+  "腾讯X5Web": [
+    "com.tencent.xweb",
+    "com.tencent.smtt.",
+    "com.tencent.mtt.",
+    "com.tencent.webview"
+  ],
+  "支付宝扫一扫": [
+    "com.alipay.mobile.scan.",
+    "com.alipay.mobile.scansdk."
+  ],
+  "移动SDK支付": [
+    "mm.sms.purchasesdk.",
+    "mm.purchasesdk"
+  ],
+  "roundedimageview": [
+    "com.makeramen.roundedimageview"
+  ],
+  "移动登录": [
+    "com.cmic.sso."
+  ],
+  "ORMLite": [
+    "com.j256.ormlite"
+  ],
+  "百度Android全景SDK": [
+    "com.baidu.lbsapi"
+  ],
+  "开源弹幕引擎·烈焰弹幕使": [
+    "master.flame.danmaku"
+  ],
+  "CheckVersionLib": [
+    "com.allenliu.versionchecklib"
+  ],
+  "腾讯云滑块验证码": [
+    "com.tencent.captchasdk"
+  ],
+  "xk_sup": [
+    "com.xk.sup"
+  ],
+  "Just Keep On Truckin": [
+    "org.ccil.cowan.tagsoup"
+  ],
+  "腾讯Dov": [
+    "dov.com.qq."
+  ],
+  "智齿客服SDK": [
+    "com.sobot.chat"
+  ],
+  "指易付": [
+    "com.skymobi.pay"
+  ],
+  "联动优势": [
+    "com.umpay.creditcard.android"
+  ],
+  "OPPO 推送": [
+    "com.coloros.mcssdk",
+    "com.heytap.mcssdk"
+  ],
+  "expandabletextview": [
+    "com.ms.square.android.expandabletextview"
+  ],
+  "nineoldandroids": [
+    "com.nineoldandroids"
+  ],
+  "爱贝云计费": [
+    "com.iapppay"
+  ],
+  "stickygridheaders": [
+    "com.tonicartos.widget.stickygridheaders"
+  ],
+  "MessagePack": [
+    "org.msgpack"
+  ],
+  "TODO 通联支付": [
+    "com.allinpay."
+  ],
+  "Jawbone": [
+    "com.jawbone.upplatformsdk.oauth"
+  ],
+  "融云IM": [
+    "io.rong.imlib",
+    "io.rong.imkit"
+  ],
+  "swipemenulistview": [
+    "com.baoyz.swipemenulistview"
+  ],
+  "安天 AVL": [
+    "com.avl.engine.",
+    ".AVLScanService"
+  ],
+  "万普支付": [
+    "com.wanpu.pay"
+  ],
+  "Microsoft mmx": [
+    "com.microsoft.mmx",
+    "com.mmx.microsoft."
+  ],
+  "GrowingIO": [
+    "com.growingio.android.sdk"
+  ],
+  "百度SAP": [
+    "com.baidu.sapi2"
+  ],
+  "Flurry": [
+    "com.flurry.android"
+  ],
+  "huewu_listview": [
+    "com.huewu.pla.lib"
+  ],
+  "SenseID 身份验证服务": [
+    "com.sensetime.liveness.",
+    "com.sensetime.idcard"
+  ],
+  "Ping++ 支付": [
+    "com.pingplusplus"
+  ],
+  "FileDownloader": [
+    "com.liulishuo.filedownloader"
+  ],
+  "Lottie-Android": [
+    "com.airbnb.lottie."
+  ],
+  "LivePush": [
+    "com.live.watermelon",
+    "com.live.sync",
+    "com.live.push"
+  ],
+  "WePay": [
+    "com.wepayplugin",
+    "com.wangyin.wepay"
+  ],
+  "友盟统计分析平台": [
+    "com.umeng.analytics"
+  ],
+  "华为支付": [
+    "com.huawei.pay.ui"
+  ],
+  "Paymax支付": [
+    "com.swwx.paymax."
+  ],
+  "Trpay支付": [
+    "com.base.bj.paysdk",
+    "com.base.bj.trpayjar"
+  ],
+  "大众点评推送": [
+    "com.dianping.base.push"
+  ],
+  "腾讯云智营防劫持sdk": [
+    "com.tencent.msdk.dns"
+  ],
+  "逸创云客服sdk": [
+    "com.chosen.kf5sdk"
+  ],
+  "emojicon": [
+    "com.rockerhieu.emojicon"
+  ],
+  "uCrop": [
+    "com.yalantis.ucrop"
+  ],
+  "淘宝扫一扫": [
+    "com.taobao.taobao.scancode."
+  ],
+  "CocosPlay": [
+    "com.chukong.cocosplay"
+  ],
+  "友盟自动更新": [
+    "com.umeng.update"
+  ],
+  "百度慧推": [
+    "com.baidu.techain"
+  ],
+  "百度Titan": [
+    "com.baidu.titan."
+  ],
+  "ViewPropertyAnimator": [
+    "com.bartoszlipinski.viewpropertyobjectanimator"
+  ],
+  "materialdialogs": [
+    "com.afollestad.materialdialogs"
+  ],
+  "jeremyfeinstein_slidingmenu": [
+    "com.jeremyfeinstein.slidingmenu.lib"
+  ],
+  "epay支付": [
+    "com.boc.epay"
+  ],
+  "诸葛IO": [
+    "com.zhuge.analysis"
+  ],
+  "paypal": [
+    "com.paypal.android.sdk",
+    "io.card.payment",
+    "com.paypal.android."
+  ],
+  "腾讯地图定位SDK": [
+    "com.tencent.map.geolocation"
+  ],
+  "腾讯智能设备": [
+    "cooperation.smartdevice",
+    "com.tencent.device."
+  ],
+  "Shizuku": [
+    "moe.shizuku.api.",
+    "moe.shizuku.client."
+  ],
+  "Vivo 推送": [
+    "com.vivo.VivoPushMessageReceiver",
+    "com.vivo.push"
+  ],
+  "ProxyBillingActivity": [
+    "com.android.billingclient.api.ProxyBillingActivity"
+  ],
+  "Unity-UI": [
+    "unityplayer.UnityActivity",
+    "unity.build-id",
+    "unityplayer.ForwardNativeEventsToDalvik",
+    "com.lostpolygon.unity.",
+    "unity.splash-enable"
+  ],
+  "腾讯X5浏览服务推送": [
+    "com.tencent.mtt.browser.push."
+  ],
+  "谷歌 datatransport": [
+    "com.google.android.datatransport"
+  ],
+  "百度移动推广SDK": [
+    "com.baidu.mobads"
+  ],
+  "Unity3d": [
+    "com.unity3d.player"
+  ],
+  "EditText in Material Design": [
+    "com.rengwuxian.materialedittext"
+  ],
+  "Ultra Pull to Refresh": [
+    "in.srain.cube.views.ptr"
+  ],
+  "环信 EaseUI": [
+    "com.hyphenate.easeui"
+  ],
+  "Foobnix": [
+    "com.foobnix."
+  ],
+  "蜻蜓FM": [
+    "com.qingting.",
+    "qingting.qingting.fm",
+    "qingting.open.appid"
+  ],
+  "手盟SDK": [
+    "com.sdklm.shoumeng."
+  ],
+  "腾讯QQ空间": [
+    "cooperation.qzone."
+  ],
+  "DownloadService": [
+    "com.ss.android.downloadlib.",
+    "com.ss.android.socialbase.downloader",
+    "com.ss.android.socialbase.appdownloader"
+  ],
+  "twitter_sdk": [
+    "com.twitter.sdk."
+  ],
+  "oksdk": [
+    "com.lk.sdk"
+  ],
+  "Talkingdata": [
+    "com.talkingdata.sdk"
+  ],
+  "OkDownload": [
+    "com.liulishuo.okdownload"
+  ],
+  "FilePickerLibrary": [
+    "com.github.developerpaul123.filepickerlibrary."
+  ],
+  "腾讯统计": [
+    "com.tencent.stat"
+  ],
+  "xUtils": [
+    "org.xutils"
+  ],
+  "神策数据": [
+    "com.sensorsdata.analytics."
+  ],
+  "华为账户登录认证": [
+    "com.huawei.hms.activity"
+  ],
+  "dropbox": [
+    "com.dropbox.core",
+    "com.dropbox.client2.android",
+    "com.dropbox.sync"
+  ],
+  "个推": [
+    "com.igexin.download",
+    "com.g.gysdk",
+    "com.igexin.getuiext",
+    "com.igexin.sdk"
+  ],
+  "华为HMS": [
+    "com.huawei.android.hms.agent",
+    "com.huawei.hms.client",
+    "com.huawei.hms",
+    "com.huawei.hms.aaid",
+    "com.huawei.hms.support.api.push",
+    "com.huawei.hms.update",
+    "com.huawei.hms.support.api.push.PushEventReceiver"
+  ],
+  "腾讯TMAssistant SDK": [
+    "com.tencent.tmassistantagentsdk",
+    "com.tencent.tmassistantsdk.downloadservice"
+  ],
+  "androidannotations": [
+    "org.androidannotations.annotations"
+  ],
+  "京东推送": [
+    "com.jingdong.jdpush_new"
+  ],
+  "LinkedMe": [
+    "linkedme.sdk.key"
+  ],
+  "谷歌应用内购": [
+    "com.google.android.play.billingclient.",
+    "com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+  ],
+  "华为 AR Engine": [
+    "com.huawei.ar.engine"
+  ],
+  "Vitamio": [
+    "io.vov.vitamio"
+  ],
+  "MultiImageChooser": [
+    "com.synconset.MultiImageChooserActivity"
+  ],
+  "SwipeToLoadLayout": [
+    "com.aspsine.swipetoloadlayout"
+  ],
+  "百度多酷": [
+    "com.duoku.platform",
+    "com.duoku.platform.push"
+  ],
+  "Microsoft Intune": [
+    "com.microsoft.intune."
+  ],
+  "梆梆 防劫持sdk": [
+    "com.bangcle.antihijack."
+  ],
+  "LFilePicker": [
+    "com.leon.lfilepickerlibrary."
+  ],
+  "网易推送": [
+    "com.netease.pushservice."
+  ],
+  "友盟社会化组件": [
+    "com.umeng.socialize"
+  ],
+  "腾讯Bugly": [
+    "com.tencent.bugly"
+  ],
+  "乐视支付": [
+    "com.letv.lepaysdk"
+  ],
+  "Vk": [
+    "com.vk.sdk"
+  ],
+  "Microsoft feedback": [
+    "com.microsoft.mmx.feedback",
+    "com.microsoft.office.feedback."
+  ],
+  "iProtect网银安全服务": [
+    "cn.cloudcore.iprotect"
+  ],
+  "迅雷下载SDK": [
+    "com.xunlei.download.APP_KEY"
+  ],
+  "Realm": [
+    "io.realm"
+  ],
+  "scalablevideoview": [
+    "com.yqritc.scalablevideoview"
+  ],
+  "junit": [
+    "junit.framework"
+  ],
+  "现在支付": [
+    "com.ipaynow.plugin"
+  ],
+  "乐视云": [
+    "com.letvcloud.cmf"
+  ],
+  "ZXing": [
+    "com.stone.zxing.",
+    "com.uuzuche.lib_zxing",
+    "com.zijunlin.zxing",
+    "com.google.zxing"
+  ],
+  "ImagePicker": [
+    "com.lzy.imagepicker.",
+    "com.imagepicker"
+  ],
+  "天翼账号SDK": [
+    "cn.com.chinatelecom.account."
+  ],
+  "Cordova": [
+    "io.github.pwlin.cordova.plugins.",
+    "org.apache.cordova"
+  ],
+  "tray": [
+    "net.grandcentrix.tray"
+  ],
+  "RxJava": [
+    "rx.android"
+  ],
+  "Piwik-SDK": [
+    "org.piwik.sdk"
+  ],
+  "Digits": [
+    "com.digits.sdk.android"
+  ],
+  "Kakao Talk": [
+    "com.kakao.sdk.AppKey"
+  ],
+  "Blankj": [
+    "com.blankj.utilcode"
+  ],
+  "一直播": [
+    "tv.xiaoka.base",
+    "tv.xiaoka.weibo",
+    "tv.xiaoka.publish",
+    "tv.xiaoka.live",
+    "tv.xiaoka.play"
+  ],
+  "Microsoft TokenShare": [
+    "com.microsoft.tokenshare."
+  ],
+  "FloatWindow": [
+    "com.yhao.floatwindow"
+  ],
+  "Smack": [
+    "org.jivesoftware.smack"
+  ],
+  "orhanobut_logger": [
+    "com.orhanobut.logger"
+  ],
+  "WeiboReactNative": [
+    "cn.reactnative.modules.weibo."
+  ],
+  "淘宝 miniimage": [
+    "com.taobao.android.miniimage"
+  ],
+  "otto": [
+    "com.squareup.otto"
+  ],
+  "WorkManager": [
+    "androidx.work.impl."
+  ],
+  "腾讯应用助手": [
+    "com.qq.AppService.",
+    "com.connector.qq.AppService"
+  ],
+  "人人网登录": [
+    "com.renn.rennsdk.oauth"
+  ],
+  "ixintui 推送": [
+    "com.ixintui.push"
+  ],
+  "Chuck": [
+    "com.readystatesoftware.chuck"
+  ],
+  "okhttp": [
+    "com.squareup.okhttp"
+  ],
+  "遨游代理": [
+    "com.maxthon.main",
+    "com.maxthon.proxy."
+  ],
+  "picasso": [
+    "com.squareup.picasso"
+  ],
+  "Mob 推送": [
+    "com.mob.tools",
+    "com.mob.MobProvider",
+    "com.mob.pushsdk."
+  ],
+  "Bing Search API": [
+    "com.microsoft.bing.commonlib",
+    "com.microsoft.bing.visualsearch",
+    "com.microsoft.bingsearchsdk",
+    "com.microsoft.bsearchsdk",
+    "com.microsoft.bing."
+  ],
+  "谷歌 Cardboard": [
+    "com.google.vrtoolkit.cardboard"
+  ],
+  "achartengine": [
+    "org.achartengine"
+  ],
+  "UserVoice": [
+    "com.uservoice.uservoicesdk"
+  ],
+  "腾讯QQ互联": [
+    "com.tencent.qqconnect",
+    "com.tencent.tauth",
+    "com.tencent.connect"
+  ],
+  "友盟推送": [
+    "com.umeng.message"
+  ],
+  "Vungle CN": [
+    "com.vungle.warren."
+  ],
+  "腾讯时光": [
+    "com.tencent.ipai"
+  ],
+  "腾讯云": [
+    "com.tencent.cloud"
+  ],
+  "易宝支付": [
+    "com.yeepay.android.plugin"
+  ],
+  "百度云推送": [
+    "com.baidu.android.pushservice"
+  ],
+  "bundletool": [
+    "shadow.bundletool"
+  ],
+  "ByakuGallery": [
+    "com.diegocarloslima.byakugallery.lib"
+  ],
+  "Microsoft AAD": [
+    "com.microsoft.identity.",
+    "com.microsoft.aad.adal"
+  ],
+  "innosystec_unrar": [
+    "de.innosystec.unrar"
+  ],
+  "rebound": [
+    "com.facebook.rebound"
+  ],
+  "百度自动更新": [
+    "com.baidu.autoupdatesdk"
+  ],
+  "微信扫一扫": [
+    "com.tencent.mm.plugin.scanner"
+  ],
+  "当乐游戏开放平台": [
+    "com.downjoy."
+  ],
+  "jackpal_androidterm": [
+    "jackpal.androidterm.Term",
+    "jackpal.androidterm"
+  ],
+  "腾讯云小薇": [
+    "com.tencent.xiaowei.sdk"
+  ],
+  "Bmob": [
+    "cn.bmob."
+  ],
+  "腾讯云反馈": [
+    "com.tencent.feedback."
+  ],
+  "百度开发者平台": [
+    "com.baidu.platformsdk"
+  ],
+  "百度GreedyPorter(GPT)": [
+    "com.baidu.gpt."
+  ],
+  "senab_photoview": [
+    "uk.co.senab.photoview"
+  ],
+  "music player": [
+    "com.wang.avi"
+  ],
+  "有赞": [
+    "com.youzan.mobile"
+  ],
+  "淘宝 minivideo": [
+    "com.taobao.android.minivideo."
+  ],
+  "Estore iap": [
+    "com.estore.iap.TypaySdkActivity"
+  ],
+  "cling": [
+    "org.teleal.cling."
+  ],
+  "小米帐号开放平台": [
+    "com.xiaomi.accounts",
+    "com.xiaomi.account.openauth"
+  ],
+  "zBarLibary": [
+    "cn.bertsir.zbar"
+  ],
+  "zip4j": [
+    "net.lingala.zip4j"
+  ],
+  "joanzapata_pdfview": [
+    "com.joanzapata.pdfview"
+  ],
+  "Bugtag": [
+    "com.bugtags.library."
+  ],
+  "Boku Pay": [
+    "com.boku.mobile."
+  ],
+  "DataEye 统计分析": [
+    "com.dataeye.channel"
+  ],
+  "迅雷vodplayer": [
+    "com.xunlei.yueyangvod"
+  ],
+  "淘宝推送": [
+    "com.taobao.agoo",
+    "com.taobao.accs."
+  ],
+  "百度定位": [
+    "com.baidu.location"
+  ],
+  "Transitions API": [
+    "com.transitionseverywhere",
+    "android.support.transition"
+  ],
+  "微信小程序支付": [
+    ".wxapi.WXPayEntryActivity",
+    "wxapi.WXEntryActivity"
+  ],
+  "bigkoo_convenientbanner": [
+    "com.bigkoo.convenientbanner"
+  ],
+  "SecVerify": [
+    "com.mob.secverify"
+  ],
+  "京东开普勒": [
+    "com.kepler.jd."
+  ],
+  "materialdatetimepicker": [
+    "com.wdullaer.materialdatetimepicker"
+  ],
+  "dagger": [
+    "dagger"
+  ],
+  "暴风魔镜": [
+    "com.baofeng.mojing.sdk."
+  ],
+  "iBank": [
+    "com.nantian.iBank"
+  ],
+  "小米应用商店sdk": [
+    "com.xiaomi.market.sdk"
+  ],
+  "百度云sdk": [
+    "com.baidu.android.imsdk",
+    "com.baidu.cloudsdk"
+  ],
+  "腾讯MTA": [
+    "com.tencent.mid.api.MidProvider",
+    "com.mta.checker."
+  ],
+  "腾讯 pangu": [
+    "com.tencent.pangu"
+  ],
+  "Crashlytics": [
+    "com.crashlytics"
+  ],
+  "javiersantos_PiracyChecker": [
+    "com.github.javiersantos.piracychecker."
+  ],
+  "VirtualApp": [
+    "io.virtualapp.",
+    "com.lody.virtual"
+  ],
+  "XCL-Charts": [
+    "org.xclcharts"
+  ],
+  "谷歌服务框架": [
+    "com.google.android.gms"
+  ],
+  "百度webkit": [
+    "com.baidu.webkit.sdk"
+  ],
+  "Pinterest style ListView": [
+    "me.maxwin"
+  ],
+  "termux": [
+    "com.termux.app."
+  ],
+  "支付宝小程序": [
+    "com.alipay.mobile.tinyappcustom"
+  ],
+  "loopj_android-async-http": [
+    "com.loopj.android.http"
+  ],
+  "叮当APP自助生成平台": [
+    "com.dingdone."
+  ],
+  "litepal_SQLite": [
+    "org.litepal"
+  ],
+  "DCloud": [
+    "io.dcloud.appstream.",
+    "io.dcloud.common",
+    "io.dcloud.streamdownload",
+    "io.dcloud"
+  ],
+  "condom": [
+    "com.oasisfeng.condom."
+  ],
+  "小米 VR": [
+    "com.mi.dlabs.component",
+    "com.xiaomi.vr.",
+    "com.mi.dlabs.vr."
+  ],
+  "友盟组件": [
+    "com.umeng.common"
+  ],
+  "BeeCloud 支付": [
+    "cn.beecloud."
+  ],
+  "Swipe Layout": [
+    "com.daimajia.swipe"
+  ],
+  "腾讯动漫": [
+    "cooperation.comic"
+  ],
+  "volley": [
+    "com.android.volley"
+  ],
+  "Gson": [
+    "org.json",
+    "com.google.gson"
+  ],
+  "图片选择 \u0026 图片预览 \u0026 图片加载相关": [
+    "com.daimajia.slider.library",
+    "com.bumptech.glide",
+    "de.hdodenhof.circleimageview",
+    "me.iwf.photopicker",
+    "in.srain.cube",
+    "com.dmcbig.mediapicker",
+    "com.darsh.multipleimageselect."
+  ],
+  "universalimageloader": [
+    "com.nostra13.universalimageloader"
+  ],
+  "豹趣小游戏": [
+    "com.cmcm.cmgame",
+    "com.cmcm.gamemoney_sdk"
+  ],
+  "环信推送SDK": [
+    "com.hyphenate.push."
+  ],
+  "微信刷脸支付": [
+    "com.tencent.wxpay.imagefacesign.",
+    "com.tencent.wxpayface."
+  ],
+  "腾讯图片选择": [
+    "com.tencent.picker."
+  ],
+  "Facebook SDK": [
+    "com.facebook.sdk",
+    "com.facebook.FacebookContent"
+  ],
+  "snappydb": [
+    "com.snappydb"
+  ],
+  "robobinding": [
+    "org.robobinding"
+  ],
+  "听云": [
+    "com.networkbench.com"
+  ],
+  "百度游戏": [
+    "com.baidu.gamesdk"
+  ],
+  "andexert": [
+    "com.andexert.library"
+  ],
+  "腾讯qq扫一扫": [
+    "com.tencent.qbardemo."
+  ],
+  "Chromium": [
+    "org.chromium.base"
+  ],
+  "腾讯推送": [
+    "com.tencent.android.vivopush",
+    "com.tencent.android.hwpush",
+    "com.tencent.android.xg.",
+    "com.tencent.tpns",
+    "com.tencent.android.mipush",
+    "com.tencent.android.mzpush",
+    "com.tencent.component.thirdpartypush"
+  ],
+  "微派支付": [
+    "com.bx.pay"
+  ],
+  "device_yearclass": [
+    "com.facebook.device.yearclass"
+  ]
+}
